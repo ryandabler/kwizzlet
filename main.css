@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+:root {
+  --color1: #5D576B;
+  --color2: #FFFAE3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color1);
+}
+
+header {
+  color: var(--color2);
+  text-align: center;
+}
+
+main, nav, footer {
+  background-color: var(--color2);
+  color: var(--color1);
+}
+
+section, footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+main {
+  width: 95%;
+  padding-top: 15px;
+}
+
+nav {
+  width: 5%;
+  text-align: center;
+  cursor: pointer;
+}
+
+nav:hover {
+  background-color: rgba(255, 250, 227, 0.95);
+}
+
+.wrapper {
+  border: 1px solid var(--color2);
+  border-radius: 5px;
+  background-color: var(--color2);
+  width: 100%;
+}
+
+footer {
+  padding-left: 15px;
+}
+
+/* Functional CSS properties */
+.hidden {
+  display: none;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  padding-left: 15px;
+}
+
+.table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
