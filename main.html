@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta name="description" content="Test out your knowledge of German vegetables with this quiz app!">
+  <title>Kwizzlet</title>
+</head>
+
+<body>
+  <header role="banner">
+    <h1>Do you know your German vegetables?</h1>
+  </header>
+  
+  <main role="main">
+    <section id="startpage">
+      Take the Quiz!
+      
+      <button>Begin</button>
+    </section>
+    
+    <section id="questionpage">
+      <div id="question">
+        Question
+      </div>
+      
+      <form id="answers">
+        <input type="radio" name="answer" id="answer-0"><label for="answer-0">Answer 1</label>
+        <input type="radio" name="answer" id="answer-1"><label for="answer-1">Answer 2</label>
+        <input type="radio" name="answer" id="answer-2"><label for="answer-2">Answer 3</label>
+        <input type="radio" name="answer" id="answer-3"><label for="answer-3">Answer 4</label>
+        <input type="submit" value="Check your answer!">
+      </form>
+    </section>
+    
+    <section id="finalpage">
+      <div class="question-recap">
+        <div class="question">
+          Question 1
+        </div>
+        <div class="answer">
+          Answer
+        </div>
+        <div class="answer">
+          Your Answer
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <nav role="navigation">
+    <button>></button>
+  </nav>
+  
+  <footer>
+    <div>
+      Question: # / 10
+    </div>
+    <div>
+      Score: # / 10
+    </div>
+  </footer>
+  
+  <script type="text/javascript" src="data.json"></script>
+</body>
