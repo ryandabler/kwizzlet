@@ -2,7 +2,9 @@
 
 :root {
   --color1: #5D576B;
+  --color1-trans: rgba(93, 87, 107, .04);
   --color2: #FFFAE3;
+  --color3: rgb(252, 252, 252);
 }
 
 * {
@@ -10,16 +12,15 @@
 }
 
 body {
-  background-color: var(--color1);
+  background-color: var(--color3);
+  color: var(--color1);
 }
 
 header {
-  color: var(--color2);
   text-align: center;
 }
 
 main, nav, footer {
-  background-color: var(--color2);
   color: var(--color1);
 }
 
@@ -33,21 +34,49 @@ main {
   padding-top: 15px;
 }
 
+h2 {
+  margin-top: 0;
+}
+
 nav {
   width: 5%;
   text-align: center;
+}
+
+nav:hover, .plain-btn:hover {
+  background-color: var(--color1-trans);
   cursor: pointer;
 }
 
-nav:hover {
-  background-color: rgba(255, 250, 227, 0.95);
+.wrapper {
+  border: 1px solid var(--color1);
+  border-radius: 5px;
+  background-color: var(--color3);
+  width: 100%;
 }
 
-.wrapper {
-  border: 1px solid var(--color2);
+.plain-btn {
+  background-color: inherit;
+  border: none;
+}
+
+nav:hover .plain-btn {
+  background-color: rgba(256, 256, 256, 0);
+}
+
+.btn {
+  padding: 5px 30px;
+  cursor: pointer;
+  background-color: var(--color3);
+  border: 1px solid var(--color1);
   border-radius: 5px;
-  background-color: var(--color2);
-  width: 100%;
+  
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn:hover {
+  background-color: var(--color1);
+  color: var(--color3);
 }
 
 footer {
