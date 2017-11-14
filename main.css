@@ -139,6 +139,7 @@ label {
   text-align: center;
   line-height: 1.2;
   font-size: 25px;
+  font-weight: 900;
 }
 
 input[type=radio]:checked + label, input[type=radio]:focus + label, label:hover {
