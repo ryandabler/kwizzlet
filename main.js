@@ -76,10 +76,9 @@ function checkAnswer(event, quizStateObj) {
   // Get the checked radio button the index integer from the id tag.
   // Compare it to quizStateObj.currentQuestionInfo.correctAnswerIdx
   let checkedRadio = parseInt($("input[name=answer]:checked").attr("data-idx"));
-  console.log(checkedRadio, quizStateObj.currentQuestionInfo.correctAnswerIdx);
+  
   if (checkedRadio === quizStateObj.currentQuestionInfo.correctAnswerIdx) {
     quizStateObj.correctAnswers++;
-    console.log("abc")
     markAnswerCorrect(checkedRadio);
   } else {
     markAnswerWrong(checkedRadio, quizStateObj.currentQuestionInfo.correctAnswerIdx);
