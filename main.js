@@ -47,6 +47,11 @@ function markAnswerCorrect(correctIdx) {
   $(`label[for=answer-${correctIdx}]`).addClass("answer-correct");
 }
 
+function markAnswerWrong(selectedIdx, correctIdx) {
+  $(`label[for=answer-${selectedIdx}]`).addClass("answer-wrong");
+  $(`label[for=answer-${correctIdx}]`).addClass("answer-correct");
+}
+
 function checkAnswer(event, quizStateObj) {
   event.preventDefault();
   
