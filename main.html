@@ -16,7 +16,7 @@
         <main role="main" class="table-cell">
           <section id="startpage">
             <h2>Take the Quiz!</h2>
-            <button class="btn">Begin</button>
+            <button id="begin-btn" class="btn">Begin</button>
           </section>
         
           <section id="questionpage" class="hidden">
@@ -25,11 +25,11 @@
             </h2>
           
             <form id="answers">
-              <input type="radio" name="answer" id="answer-0"><label for="answer-0">Answer 1</label>
-              <input type="radio" name="answer" id="answer-1"><label for="answer-1">Answer 2</label>
-              <input type="radio" name="answer" id="answer-2"><label for="answer-2">Answer 3</label>
-              <input type="radio" name="answer" id="answer-3"><label for="answer-3">Answer 4</label>
-              <input type="submit" class="btn" value="Check your answer!">
+              <input type="radio" name="answer" data-idx="0" id="answer-0"><label for="answer-0">Answer 1</label>
+              <input type="radio" name="answer" data-idx="1" id="answer-1"><label for="answer-1">Answer 2</label>
+              <input type="radio" name="answer" data-idx="2" id="answer-2"><label for="answer-2">Answer 3</label>
+              <input type="radio" name="answer" data-idx="3" id="answer-3"><label for="answer-3">Answer 4</label>
+              <input type="submit" id="check-answer" class="btn" value="Check your answer!">
             </form>
           </section>
           
@@ -66,5 +66,7 @@
       </footer>
     </div>
   
+  <script src="https://code.jquery.com/jquery.min.js"></script>
   <script type="text/javascript" src="data.json"></script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
