@@ -81,6 +81,7 @@ function checkAnswer(event, quizStateObj) {
   if (checkedRadio === quizStateObj.currentQuestionInfo.correctAnswerIdx) {
     quizStateObj.correctAnswers++;
     markAnswerCorrect(checkedRadio);
+    renderScore(quizStateObj.correctAnswers, questions.length);
   } else {
     markAnswerWrong(checkedRadio, quizStateObj.currentQuestionInfo.correctAnswerIdx);
   }
