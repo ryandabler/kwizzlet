@@ -83,6 +83,7 @@ nav:hover .plain-btn {
 
 footer {
   padding-left: 15px;
+  padding-right: 15px;
 }
 
 input[type=radio] {
@@ -145,6 +146,17 @@ label {
 input[type=radio]:checked + label, input[type=radio]:focus + label, label:hover {
   background-color: var(--color1);
   color: var(--color3);
+}
+
+#question-num, #score {
+  display: inline-block;
+  border: 1px solid var(--color1);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#score {
+  float: right;
 }
 
 /* Functional CSS properties */
