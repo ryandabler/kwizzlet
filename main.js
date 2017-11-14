@@ -1,6 +1,7 @@
 function renderQuestion(question) {
   // Clear correct/wrong classes
-  $("#answers > *").removeClass("answer-correct", "answer-wrong");
+  $("#answers > *").removeClass("answer-correct");
+  $("#answers > *").removeClass("answer-wrong");
   
   // Clear radio group
   $("[name=answer]").attr("checked", false);
