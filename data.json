@@ -6,12 +6,12 @@ const questions = [
   
   {
     "q": "cucumber",
-    "a": ["Gurke", "Spargel", "Gurke", "Kohl"]
+    "a": ["Gurke", "Spargel", "Karrote", "Kohl"]
   },
   
   {
     "q": "lettuce",
-    "a": ["Salat", "RÃ¼be", "Zwiebel", "Erbse"]
+    "a": ["Salat", "Rübe", "Zwiebel", "Erbse"]
   },
   
   {
@@ -26,7 +26,7 @@ const questions = [
   
   {
     "q": "asparagus",
-    "a": ["Spargel", "Tomate", "RÃ¼be", "Zwiebel"]
+    "a": ["Spargel", "Tomate", "Rübe", "Zwiebel"]
   },
   
   {
@@ -36,7 +36,7 @@ const questions = [
   
   {
     "q": "beet",
-    "a": ["RÃ¼be", "Karrote", "Zwiebel", "Salat"]
+    "a": ["Rübe", "Karrote", "Zwiebel", "Salat"]
   },
   
   {
@@ -46,6 +46,6 @@ const questions = [
   
   {
     "q": "cabbage",
-    "a": ["Kohl", "RÃ¼be", "Karrote", "Tomate"]
+    "a": ["Kohl", "Rübe", "Karrote", "Tomate"]
   }
 ];
