@@ -1,4 +1,10 @@
 function renderQuestion(question) {
+  // Clear correct/wrong classes
+  $("#answers > *").removeClass("answer-correct", "answer-wrong");
+  
+  // Clear radio group
+  $("[name=answer]").attr("checked", false);
+  
   // Write question to DOM
   $("#question").html(`Give the translation of: '${question.question}'`);
   
