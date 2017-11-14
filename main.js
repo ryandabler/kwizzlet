@@ -9,6 +9,14 @@ function renderQuestion(question) {
   }
 }
 
+function renderQuestionNumber(questionNumber, totalQuestions) {
+  $("#question-num").text(`Question: ${questionNumber} / ${totalQuestions}`);
+}
+
+function renderScore(correctAnswers, totalQuestions) {
+  $("#score").text(`Score: ${correctAnswers} / ${totalQuestions}`);
+}
+
 function loadQuestion(quizStateObj) {
   // Get question from 'questions' array and load information into 'quizStateObj':
   //    - Get current question
@@ -30,6 +38,10 @@ function loadQuestion(quizStateObj) {
   
   // Render question to application
   renderQuestion(quizStateObj.currentQuestionInfo);
+  
+  // Render question number and score to application
+  renderQuestionNumber(quizStateObj.questionNumber, questions.length);
+  renderScore(quizStateObj.correctAnswers, questions.length)
 }
 
 function renderQuiz(quizStateObj) {
