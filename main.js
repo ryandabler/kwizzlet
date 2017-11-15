@@ -7,8 +7,8 @@ function renderQuestion(question) {
   $("[name=answer]").attr("checked", false);
   $("fieldset").attr("disabled", false);
   
-  // Toggle back to check answer button
-  $("#check-answer").removeClass("hidden");
+  // Toggle back to check answer button and disable it
+  $("#check-answer").removeClass("hidden").attr("disabled", true);
   $("#next-question").addClass("hidden");
   
   // Write question to DOM
@@ -177,12 +177,18 @@ function restartQuiz(quizStateObj) {
   renderQuiz(quizStateObj);
 }
 
+function enableCheckResultButton() {
+  $("#check-answer").attr("disabled", false);
+}
+
 function implementEventListeners(quizStateObj) {
   $("#begin-btn").click(function() { renderQuiz(quizStateObj); });
   $("#next-question").click(function() { loadQuestion(quizStateObj); });
   $("#check-answer").click(function(event) { checkAnswer(event, quizStateObj); });
   $("#recap").click(function() { showResults(quizStateObj); });
   $("#restartquiz").click(function() { restartQuiz(quizStateObj); });
+  $("fieldset").on("click", "label", enableCheckResultButton);
+  $("fieldset").on("focus", "input[type=radio]", enableCheckResultButton);
 }
 
 function quizAppInit() {

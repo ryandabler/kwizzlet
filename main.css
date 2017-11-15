@@ -2,6 +2,7 @@
 
 :root {
   --color-dk-gray: #5D576B;
+  --color-lt-gray: #D2D1D6;
   --color-offwhite: #FCFCFC;
   --color-greenish: #7EB9B2;
   --color-redish: #F7567C;
@@ -67,9 +68,15 @@ label {
   transition: background-color 0.15s, color 0.15s;
 }
 
-.btn:hover, .btn:focus {
+.btn:not(:disabled):hover, .btn:not(:disabled):focus {
   background-color: var(--color-dk-gray);
   color: var(--color-offwhite);
+}
+
+.btn:disabled {
+  color: var(--color-lt-gray);
+  border-color: var(--color-lt-gray);
+  cursor: not-allowed;
 }
 
 .answer-correct {
