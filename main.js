@@ -90,11 +90,14 @@ function checkAnswer(event, quizStateObj) {
   // Disable fieldset until next question is loaded
   $("fieldset").attr("disabled", true);
   
+  // Hide check answer button and display next question button
+  $("#check-answer").toggleClass("hidden");
+  $("#next-question").toggleClass("hidden");
 }
 
 function implementEventListeners(quizStateObj) {
   $("#begin-btn").click(function() { renderQuiz(quizStateObj); });
-  $("nav").on("click", function(event) { loadQuestion(quizStateObj); });
+  $("#next-question").on("click", function(event) { loadQuestion(quizStateObj); });
   $("#check-answer").click(function(event) { checkAnswer(event, quizStateObj); });
 }
 
