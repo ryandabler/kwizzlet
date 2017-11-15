@@ -165,7 +165,7 @@ function restartQuiz(quizStateObj) {
 
 function implementEventListeners(quizStateObj) {
   $("#begin-btn").click(function() { renderQuiz(quizStateObj); });
-  $("#next-question").on("click", function(event) { loadQuestion(quizStateObj); });
+  $("#next-question").click(function() { loadQuestion(quizStateObj); });
   $("#check-answer").click(function(event) { checkAnswer(event, quizStateObj); });
   $("#recap").click(function() { showResults(quizStateObj.history); });
   $("#restartquiz").click(function() { restartQuiz(quizStateObj); });
