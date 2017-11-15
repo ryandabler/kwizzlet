@@ -22,7 +22,7 @@ header {
   text-align: center;
 }
 
-main, nav, footer {
+main, footer {
   color: var(--color1);
 }
 
@@ -31,23 +31,8 @@ section, footer {
   padding-bottom: 15px;
 }
 
-main {
-  width: 95%;
-  padding-top: 15px;
-}
-
 h2 {
   margin-top: 0;
-}
-
-nav {
-  width: 5%;
-  text-align: center;
-}
-
-nav:hover, .plain-btn:hover {
-  background-color: var(--color1-trans);
-  cursor: pointer;
 }
 
 .wrapper {
@@ -55,15 +40,7 @@ nav:hover, .plain-btn:hover {
   border-radius: 5px;
   background-color: var(--color3);
   width: 100%;
-}
-
-.plain-btn {
-  background-color: inherit;
-  border: none;
-}
-
-nav:hover .plain-btn {
-  background-color: rgba(256, 256, 256, 0);
+  padding: 15px;
 }
 
 .btn {
@@ -162,15 +139,4 @@ input[type=radio]:checked + label, input[type=radio]:focus + label, label:hover 
 /* Functional CSS properties */
 .hidden {
   display: none;
-}
-
-.table {
-  display: table;
-  width: 100%;
-  padding-left: 15px;
-}
-
-.table-cell {
-  display: table-cell;
-  vertical-align: middle;
 }
