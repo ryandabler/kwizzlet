@@ -81,8 +81,18 @@ function checkAnswer(event, quizStateObj) {
   // Get the checked radio button the index integer from the id tag.
   // Compare it to quizStateObj.currentQuestionInfo.correctAnswerIdx
   let checkedRadio = parseInt($("input[name=answer]:checked").attr("data-idx"));
+  let correctIdx = quizStateObj.currentQuestionInfo.correctAnswerIdx;
   
-  if (checkedRadio === quizStateObj.currentQuestionInfo.correctAnswerIdx) {
+  // Enter historical answer information into quizStateObj.history
+  let historyObj = {
+    correctAnswer: quizStateObj.currentQuestionInfo.answers[correctIdx],
+    userAnswer: quizStateObj.currentQuestionInfo.answers[checkedRadio]
+  };
+  
+  quizStateObj.history.push(historyObj);
+  
+  // Judge answer
+  if (checkedRadio === correctIdx) {
     quizStateObj.correctAnswers++;
     markAnswerCorrect(checkedRadio);
     renderScore(quizStateObj.correctAnswers, QUESTIONS.length);
@@ -93,15 +103,71 @@ function checkAnswer(event, quizStateObj) {
   // Disable fieldset until next question is loaded
   $("fieldset").attr("disabled", true);
   
-  // Hide check answer button and display next question button
+  // Hide check answer button and display next question button (or recap button)
   $("#check-answer").toggleClass("hidden");
-  $("#next-question").toggleClass("hidden");
+  
+  if (quizStateObj.questionNumber < 10) {
+    $("#next-question").toggleClass("hidden");
+  } else {
+    $("#recap").toggleClass("hidden");
+  }
+}
+
+function showResults(quizStateHistory) {
+  // Generate list of results and append to #finalpage element
+  for (let i = 0; i < quizStateHistory.length; i++) {
+    let recapDiv = $("<div>", {"class": "question-recap"});
+    let qDiv = $("<div>", {"class": "question"});
+    let aDiv = $("<div>", {"class": "answer"});
+    
+    qDiv.text(`Question: ${QUESTIONS[i].q}`);
+    aDiv.text(`Your Answer: ${quizStateHistory[i].userAnswer}`);
+    recapDiv.append(qDiv, aDiv);
+    
+    // If user was wrong, add another div for what the correct answer should have been
+    // Also, style recapDiv as .correct or .wrong
+    if (quizStateHistory[i].userAnswer !== quizStateHistory[i].correctAnswer) {
+      let cDiv = $("<div>", {"class": "answer"});
+      cDiv.text(`Correct Answer: ${quizStateHistory[i].correctAnswer}`);
+      recapDiv.append(cDiv);
+      recapDiv.addClass("wrong");
+    } else {
+      recapDiv.addClass("correct");
+    }
+    
+    $("#restartquiz").before(recapDiv);
+  }
+  
+  // Display finalpage section
+  $("#questionpage").toggleClass("hidden");
+  $("#finalpage").toggleClass("hidden");
+}
+
+function restartQuiz(quizStateObj) {
+  // Reset quizStateObj to initial values
+  quizStateObj.questionNumber = 0;
+  quizStateObj.correctAnswers = 0;
+  quizStateObj.currentQuestionInfo = {
+    question: null,
+    answers: null,
+    correctAnswerIdx: null
+  };
+  quizStateObj.history = [];
+  
+  // Restore DOM to original state
+  $("#recap").addClass("hidden");
+  $(".question-recap").remove();
+  
+  // Rerender the quiz
+  renderQuiz(quizStateObj);
 }
 
 function implementEventListeners(quizStateObj) {
   $("#begin-btn").click(function() { renderQuiz(quizStateObj); });
   $("#next-question").on("click", function(event) { loadQuestion(quizStateObj); });
   $("#check-answer").click(function(event) { checkAnswer(event, quizStateObj); });
+  $("#recap").click(function() { showResults(quizStateObj.history); });
+  $("#restartquiz").click(function() { restartQuiz(quizStateObj); });
 }
 
 function quizAppInit() {
