@@ -84,6 +84,7 @@ label {
   border-color: var(--color4);
   background-color: var(--color4) !important;
   color: var(--color3) !important;
+  transition: none;
 }
 
 .answer-correct::after {
@@ -104,6 +105,7 @@ label {
   border-color: var(--color5);
   background-color: var(--color5) !important;
   color: var(--color3) !important;
+  transition: none;
 }
 
 .answer-wrong::after {
