@@ -180,7 +180,8 @@ function quizAppInit() {
       question: null,
       answers: null,
       correctAnswerIdx: null
-    }
+    },
+    history: []
   };
   
   // Set up the rest of the quiz
