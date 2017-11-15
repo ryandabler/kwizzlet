@@ -1,4 +1,4 @@
-const questions = [
+const QUESTIONS = [
   {
     "q": "pea",
     "a": ["Erbse", "Gurke", "Salat", "Tomate"]

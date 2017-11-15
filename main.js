@@ -30,12 +30,12 @@ function renderScore(correctAnswers, totalQuestions) {
 }
 
 function loadQuestion(quizStateObj) {
-  // Get question from 'questions' array and load information into 'quizStateObj':
+  // Get question from 'QUESTIONS' array and load information into 'quizStateObj':
   //    - Get current question
   //    - Randomly generate where the correct answer should be among the list of all possible answers
   //    - Put information regarding current question into quizStateObj
   //    - Put correct answer in whatever place was randomly generated
-  let currentQuestion = questions[quizStateObj.questionNumber];
+  let currentQuestion = QUESTIONS[quizStateObj.questionNumber];
   let correctAnswerIdx = Math.floor(Math.random() * currentQuestion.a.length);
   
   quizStateObj.currentQuestionInfo.question = currentQuestion.q;
@@ -52,8 +52,8 @@ function loadQuestion(quizStateObj) {
   renderQuestion(quizStateObj.currentQuestionInfo);
   
   // Render question number and score to application
-  renderQuestionNumber(quizStateObj.questionNumber, questions.length);
-  renderScore(quizStateObj.correctAnswers, questions.length)
+  renderQuestionNumber(quizStateObj.questionNumber, QUESTIONS.length);
+  renderScore(quizStateObj.correctAnswers, QUESTIONS.length);
 }
 
 function renderQuiz(quizStateObj) {
@@ -86,7 +86,7 @@ function checkAnswer(event, quizStateObj) {
   if (checkedRadio === quizStateObj.currentQuestionInfo.correctAnswerIdx) {
     quizStateObj.correctAnswers++;
     markAnswerCorrect(checkedRadio);
-    renderScore(quizStateObj.correctAnswers, questions.length);
+    renderScore(quizStateObj.correctAnswers, QUESTIONS.length);
   } else {
     markAnswerWrong(checkedRadio, quizStateObj.currentQuestionInfo.correctAnswerIdx);
   }
