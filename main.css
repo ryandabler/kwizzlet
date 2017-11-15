@@ -20,10 +20,6 @@ header {
   text-align: center;
 }
 
-main, footer {
-  color: var(--color-dk-gray);
-}
-
 section, footer {
   padding-top: 15px;
   padding-bottom: 15px;
