@@ -2,8 +2,7 @@
 
 :root {
   --color-dk-gray: #5D576B;
-  --color-dk-gray-trans: rgba(93, 87, 107, .04);
-  --color-offwhite: rgb(252, 252, 252);
+  --color-offwhite: #FCFCFC;
   --color-greenish: #7EB9B2;
   --color-redish: #F7567C;
 }
