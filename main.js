@@ -114,7 +114,21 @@ function checkAnswer(event, quizStateObj) {
   }
 }
 
-function showResults(quizStateHistory) {
+function showResults(quizStateObj) {
+  let quizStateHistory = quizStateObj.history;
+  
+  // Insert message into <h2> tag
+  let message = `You answered ${quizStateObj.correctAnswers} out of ${quizStateHistory.length} questions correctly. `;
+  if (quizStateObj.correctAnswers >= 8) {
+    message += "Excellent!";
+  } else if (quizStateObj.correctAnswers >= 5) {
+    message += "Good job!";
+  } else {
+    message += "Try again!";
+  }
+  
+  $("#finalpage h2").text(message);
+  
   // Generate list of results and append to #finalpage element
   for (let i = 0; i < quizStateHistory.length; i++) {
     let recapDiv = $("<div>", {"class": "question-recap"});
@@ -167,7 +181,7 @@ function implementEventListeners(quizStateObj) {
   $("#begin-btn").click(function() { renderQuiz(quizStateObj); });
   $("#next-question").click(function() { loadQuestion(quizStateObj); });
   $("#check-answer").click(function(event) { checkAnswer(event, quizStateObj); });
-  $("#recap").click(function() { showResults(quizStateObj.history); });
+  $("#recap").click(function() { showResults(quizStateObj); });
   $("#restartquiz").click(function() { restartQuiz(quizStateObj); });
 }
 
