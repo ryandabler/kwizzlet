@@ -1,10 +1,11 @@
 function renderQuestion(question) {
   // Clear correct/wrong classes
-  $("#answers > *").removeClass("answer-correct");
-  $("#answers > *").removeClass("answer-wrong");
+  $("#answers *").removeClass("answer-correct");
+  $("#answers *").removeClass("answer-wrong");
   
-  // Clear radio group
+  // Clear radio group and enable
   $("[name=answer]").attr("checked", false);
+  $("fieldset").attr("disabled", false);
   
   // Write question to DOM
   $("#question").html(`Give the translation of: '${question.question}'`);
@@ -85,6 +86,10 @@ function checkAnswer(event, quizStateObj) {
   } else {
     markAnswerWrong(checkedRadio, quizStateObj.currentQuestionInfo.correctAnswerIdx);
   }
+  
+  // Disable fieldset until next question is loaded
+  $("fieldset").attr("disabled", true);
+  
 }
 
 function implementEventListeners(quizStateObj) {
