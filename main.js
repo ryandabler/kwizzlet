@@ -64,7 +64,6 @@ function renderQuiz(quizStateObj) {
   $("#startpage").toggleClass("hidden");
   $("#questionpage").toggleClass("hidden");
   $("footer").toggleClass("hidden");
-  $("nav").toggleClass("hidden").toggleClass("table-cell");
 }
 
 function markAnswerCorrect(correctIdx) {
