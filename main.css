@@ -82,7 +82,7 @@ label {
 .answer-correct {
   border-color: var(--color4);
   background-color: var(--color4) !important;
-  color: var(--color3);
+  color: var(--color3) !important;
 }
 
 .answer-correct::after {
