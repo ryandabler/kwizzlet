@@ -7,6 +7,10 @@ function renderQuestion(question) {
   $("[name=answer]").attr("checked", false);
   $("fieldset").attr("disabled", false);
   
+  // Toggle back to check answer button
+  $("#check-answer").removeClass("hidden");
+  $("#next-question").addClass("hidden");
+  
   // Write question to DOM
   $("#question").html(`Give the translation of: '${question.question}'`);
   
