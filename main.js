@@ -60,10 +60,11 @@ function renderQuiz(quizStateObj) {
   // Load current question before displaying #questionpage
   loadQuestion(quizStateObj);
   
-  // hide #startpage and show #questionpage, footer, and nav
-  $("#startpage").toggleClass("hidden");
-  $("#questionpage").toggleClass("hidden");
-  $("footer").toggleClass("hidden");
+  // hide #startpage and show #questionpage and footer
+  $("#startpage").addClass("hidden");
+  $("#finalpage").addClass("hidden");
+  $("#questionpage").removeClass("hidden");
+  $("footer").removeClass("hidden");
 }
 
 function markAnswerCorrect(correctIdx) {
