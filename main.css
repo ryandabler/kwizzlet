@@ -76,7 +76,7 @@ label {
 .btn:disabled {
   color: var(--color-lt-gray);
   border-color: var(--color-lt-gray);
-  cursor: not-allowed;
+  cursor: default;
 }
 
 .answer-correct {
