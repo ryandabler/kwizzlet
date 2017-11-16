@@ -1,3 +1,5 @@
+'use strict';
+
 function renderQuestion(question) {
   // Clear correct/wrong classes
   $("#answers *").removeClass("answer-correct");
