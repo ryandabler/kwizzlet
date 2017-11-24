@@ -186,6 +186,15 @@ fieldset:disabled label:hover {
   font-weight: 900;
 }
 
+.a11y-hidden {
+  position: absolute;
+  left: 0px;
+  top: -500px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /************
 * Mobile defaults
 ************/
